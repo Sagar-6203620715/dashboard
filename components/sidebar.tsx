@@ -19,33 +19,33 @@ export function Sidebar() {
       name: 'Dashboard',
       href: '/dashboard',
       icon: LayoutDashboard,
-      active: pathname === '/dashboard',
+      active: pathname.startsWith('/dashboard') && pathname === '/dashboard',
     },
     {
       name: 'Orders',
-      href: '/dashboard/orders',
+      href: '/orders',
       icon: ShoppingBag,
-      active: pathname === '/dashboard/orders',
+      active: pathname.startsWith('/orders'),
     },
     {
       name: 'Customers',
-      href: '/dashboard/customers',
+      href: '/customers',
       icon: Users,
-      active: pathname === '/dashboard/customers',
+      active: pathname.startsWith('/customers'),
     },
     {
       name: 'Inventory',
-      href: '/dashboard/inventory',
+      href: '/inventory',
       icon: Folder,
-      active: pathname === '/dashboard/inventory',
+      active: pathname.startsWith('/inventory'),
     },
   ];
 
   return (
-    <aside className="w-72 bg-white border-r border-gray-200 flex flex-col h-screen fixed left-0 top-0">
+    <aside className="w-72 bg-white border-r border-gray-100 flex flex-col h-screen fixed left-0 top-0 z-50">
       {/* Logo */}
       <div className="p-8 flex items-center gap-3">
-        <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+        <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
           <svg
             width="28"
             height="28"
@@ -64,26 +64,26 @@ export function Sidebar() {
             />
           </svg>
         </div>
-        <span className="text-2xl font-bold text-gray-800">Nova</span>
+        <span className="text-2xl font-bold text-nova-gray-600">Nova</span>
       </div>
 
       {/* Menu Items */}
-      <nav className="flex-1 px-6 py-8">
-        <div className="space-y-4">
+      <nav className="flex-1 px-8 py-8">
+        <div className="space-y-6">
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-4 px-5 py-4 rounded-xl transition-colors ${
+                className={`flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-200 ${
                   item.active
-                    ? 'bg-blue-500 text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    ? 'bg-blue-500 text-white shadow-lg'
+                    : 'text-nova-gray-500 hover:bg-gray-50'
                 }`}
               >
                 <Icon size={24} />
-                <span className="text-base">{item.name}</span>
+                <span className="text-sm font-medium">{item.name}</span>
               </Link>
             );
           })}
@@ -91,14 +91,14 @@ export function Sidebar() {
       </nav>
 
       {/* Bottom Menu */}
-      <div className="border-t border-gray-200 p-6 space-y-3">
-        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors text-gray-600">
+      <div className="border-t border-gray-100 p-6 space-y-3">
+        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors text-nova-gray-600 text-sm font-medium">
           <Headphones size={24} />
-          <span className="text-base">Contact Support</span>
+          <span>Contact Support</span>
         </button>
-        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors text-red-500">
+        <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 transition-colors text-nova-red text-sm font-medium">
           <LogOut size={24} />
-          <span className="text-base">Logout</span>
+          <span>Logout</span>
         </button>
       </div>
     </aside>
