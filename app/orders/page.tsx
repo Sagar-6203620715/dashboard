@@ -434,12 +434,33 @@ export default function OrdersPage() {
                     </td>
                     <td className="p-3 text-gray-700">{order.orderTotal}</td>
                     <td className="p-3">
-                      <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 w-fit">
-                        <span className="text-gray-600 text-xs">
-                          {order.action}
-                        </span>
-                        <ChevronDown size={14} className="text-gray-600" />
-                      </div>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 w-fit cursor-pointer hover:bg-gray-200">
+                            <span className="text-gray-600 text-xs">
+                              {order.action}
+                            </span>
+                            <ChevronDown size={14} className="text-gray-600" />
+                          </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                          <DropdownMenuItem
+                            onClick={() => handleStatusChange(order.id, 'Completed')}
+                          >
+                            Completed
+                          </DropdownMenuItem>
+                          <DropdownMenuItem
+                            onClick={() => handleStatusChange(order.id, 'In-Progress')}
+                          >
+                            In-Progress
+                          </DropdownMenuItem>
+                          <DropdownMenuItem
+                            onClick={() => handleStatusChange(order.id, 'Pending')}
+                          >
+                            Pending
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </td>
                     <td className="p-3">{getStatusBadge(order.status)}</td>
                   </tr>
