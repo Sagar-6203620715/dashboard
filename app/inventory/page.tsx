@@ -180,13 +180,9 @@ export default function InventoryPage() {
         <div className="px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl font-medium text-gray-900">Inventory</h1>
           <div className="flex items-center gap-5">
-            <div className="flex items-center gap-3 px-3 py-1.5 bg-orange-50 rounded-lg">
-              <span className="text-sm text-gray-900">Nanny's Shop</span>
-              <ChevronDown className="w-5 h-5 text-gray-900" />
-            </div>
-            <div className="relative">
-              <Bell className="w-5 h-5 text-blue-500" fill="#5570F1" />
-            </div>
+            <div
+              className="relative"
+            />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/b4f35bf26cdf5ee2d0a27c107b023596d365143e?width=64"
               alt="Profile"
