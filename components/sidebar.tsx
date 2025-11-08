@@ -19,25 +19,25 @@ export function Sidebar() {
       name: 'Dashboard',
       href: '/dashboard',
       icon: LayoutDashboard,
-      active: pathname === '/dashboard',
+      active: pathname.startsWith('/dashboard'),
     },
     {
       name: 'Orders',
       href: '/orders',
       icon: ShoppingBag,
-      active: pathname === '/orders',
+      active: pathname.startsWith('/orders'),
     },
     {
       name: 'Customers',
       href: '/customers',
       icon: Users,
-      active: pathname === '/customers',
+      active: pathname.startsWith('/customers'),
     },
     {
       name: 'Inventory',
       href: '/inventory',
       icon: Folder,
-      active: pathname === '/inventory',
+      active: pathname.startsWith('/inventory'),
     },
   ];
 
