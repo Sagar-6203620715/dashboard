@@ -252,20 +252,11 @@ export default function OrdersPage() {
       {/* Header */}
       <div className="flex justify-between items-center mb-8 bg-white p-6 rounded-2xl border border-gray-100">
         <h1 className="text-2xl font-semibold text-gray-700">Orders</h1>
-        <div className="flex items-center gap-3">
-          <div className="px-3 py-2 rounded-lg bg-orange-50">
-            <span className="text-sm font-medium text-gray-700">
-              Nanny's Shop
-            </span>
-            <ChevronDown size={16} className="inline ml-2" />
-          </div>
-          <div className="text-2xl">🔔</div>
-          <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/b4f35bf26cdf5ee2d0a27c107b023596d365143e?width=64"
-            alt="Profile"
-            className="w-8 h-8 rounded-lg"
-          />
-        </div>
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/b4f35bf26cdf5ee2d0a27c107b023596d365143e?width=64"
+          alt="Profile"
+          className="w-8 h-8 rounded-lg"
+        />
       </div>
 
       {/* Orders Summary */}
