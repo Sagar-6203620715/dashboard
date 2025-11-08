@@ -237,7 +237,15 @@ export default function OrdersPage() {
   const [selectedRows, setSelectedRows] = useState<string[]>([]);
   const [orders, setOrders] = useState<Order[]>(sampleOrders);
 
-  const filteredOrders = sampleOrders.filter((order) =>
+  const handleStatusChange = (orderId: string, newStatus: 'Completed' | 'In-Progress' | 'Pending') => {
+    setOrders(
+      orders.map((order) =>
+        order.id === orderId ? { ...order, status: newStatus, action: newStatus } : order
+      )
+    );
+  };
+
+  const filteredOrders = orders.filter((order) =>
     order.customerName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
