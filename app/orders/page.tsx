@@ -268,13 +268,6 @@ export default function OrdersPage() {
         </div>
       </div>
 
-      {/* Breadcrumbs */}
-      <div className="flex items-center gap-2 mb-6 bg-white p-3 rounded-lg border border-gray-100">
-        <span className="text-sm text-gray-600">🏠</span>
-        <span className="text-sm text-gray-600">/</span>
-        <span className="text-sm text-gray-600">Orders</span>
-      </div>
-
       {/* Orders Summary */}
       <div className="mb-8">
         <div className="flex justify-between items-center mb-4">
