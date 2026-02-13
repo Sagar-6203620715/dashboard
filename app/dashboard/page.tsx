@@ -12,7 +12,6 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   BarChart,
   Bar,
@@ -216,7 +215,7 @@ export default function DashboardPage() {
 
         const totalSales =
           salesRes.data?.reduce(
-            (sum, row) => sum + Number((row as any).order_total),
+            (sum, row: { order_total: number | string }) => sum + Number(row.order_total),
             0,
           ) ?? 0;
 

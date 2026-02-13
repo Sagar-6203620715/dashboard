@@ -167,7 +167,7 @@ export default function OrdersPage() {
       setOrders((data as Order[]) ?? []);
       setTotalCount(count ?? 0);
       setSelectedRows([]);
-    } catch (e) {
+    } catch {
       setError("Failed to load orders. Please try again.");
     } finally {
       setLoading(false);

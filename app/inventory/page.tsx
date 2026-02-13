@@ -46,6 +46,7 @@ import {
 } from "lucide-react";
 import type { Product } from "@/lib/types";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const STATUS_STYLES: Record<string, string> = {
   Published: "bg-green-100 text-green-700",
@@ -556,10 +557,13 @@ export default function InventoryPage() {
                             <td className={bodyCell}>
                               <div className="flex items-center gap-3">
                                 {product.image_url ? (
-                                  <img
+                                  <Image
                                     src={product.image_url}
                                     alt={product.name}
+                                    width={36}
+                                    height={36}
                                     className="h-9 w-9 rounded-lg border border-gray-100 object-cover"
+                                    unoptimized
                                   />
                                 ) : (
                                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-sm font-bold text-[#5570F1]">

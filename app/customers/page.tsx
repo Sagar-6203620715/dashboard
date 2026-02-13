@@ -38,8 +38,6 @@ import {
   Send,
   Copy,
   ChevronDown,
-  Users,
-  ShoppingBag,
   Menu,
   ArrowUpDown,
   ArrowUp,
@@ -198,7 +196,7 @@ export default function CustomersPage() {
       setCustomers((data as Customer[]) ?? []);
       setTotalCount(count ?? 0);
       setSelectedRows([]);
-    } catch (e) {
+    } catch {
       setError("Failed to load customers. Please try again.");
     } finally {
       setLoading(false);
